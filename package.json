@@ -2,10 +2,17 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@types/node": "^20.14.11",
     "vite": "^5.0.0",
     "vite-plugin-ruby": "^5.0.0"
   },
   "dependencies": {
-    "@inertiajs/react": "^1.2.0"
+    "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/react": "^1.2.0",
+    "accordion": "^3.0.2",
+    "add": "^2.0.6",
+    "button": "^1.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
