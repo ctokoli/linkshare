@@ -69,10 +69,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem "vite_rails", "~> 3.0"
+
 gem "inertia_rails", "~> 3.2"
 
-gem "vite_ruby", "~> 3.6"
-
 gem "inertia_rails-contrib", "~> 0.1.1"
-
-gem "foreman"
