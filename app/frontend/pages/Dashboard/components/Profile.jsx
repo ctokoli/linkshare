@@ -1,5 +1,5 @@
 import React from 'react'
-import TabComponent from '../TabComponent'
+import TabComponent from './TabComponent'
 
 export default function Profile() {    
   return (

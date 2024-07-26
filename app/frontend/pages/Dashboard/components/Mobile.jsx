@@ -1,4 +1,5 @@
 import React from 'react'
+import MobileMockup from './MobileMockup'
 
 
 
@@ -6,10 +7,10 @@ import React from 'react'
 export default function Mobile() {
   return (
     <div className=' bg-white w-[500px] rounded-lg'>
-      <h1>Mobile</h1>
-      
-      
-
+      <div className='text-center py-8'>
+        <h5 className='text-xl font-bold'>Preview</h5>
+      </div>
+      <MobileMockup />
     </div>
   )
 }

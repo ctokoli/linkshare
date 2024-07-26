@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { LuUserSquare } from "react-icons/lu";
+import { HiMiniLink } from "react-icons/hi2";
 
 
 
@@ -21,7 +23,7 @@ export default function TabComponent() {
           }`}
           onClick={() => openTab("Tab1")}
         >
-         My Links
+        <div className="flex items-center gap-2"> <div><HiMiniLink className="text-2xl" /></div> <div>My Links</div></div>
         </button>
         <button
           className={`tab-link px-4 py-2  ${
@@ -31,7 +33,7 @@ export default function TabComponent() {
           }`}
           onClick={() => openTab("Tab2")}
         >
-         Profile
+         <div className="flex items-center gap-2"> <div><LuUserSquare className="text-2xl" /></div> <div>Profile</div></div>
         </button>
        
       </div>
