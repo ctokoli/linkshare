@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LuUserSquare } from "react-icons/lu";
 import { HiMiniLink } from "react-icons/hi2";
+import LinksForm from './LinksForm';
 
 
 
@@ -44,7 +45,9 @@ export default function TabComponent() {
         }`}
       >
         <h2 className="text-xl font-bold">Links</h2>
-        <p>This is the content for Tab 1.</p>
+        <div>
+          <LinksForm />
+        </div>
       </div>
       <div
         id="Tab2"
