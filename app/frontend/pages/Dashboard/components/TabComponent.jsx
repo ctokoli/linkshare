@@ -7,11 +7,16 @@ import LinksForm from './LinksForm';
 
 export default function TabComponent() {
     const [activeTab, setActiveTab] = useState("Tab1");
+    const [linkForms, setLinkForm ] = useState([LinksForm])
   
     const openTab = (tabName) => {
       setActiveTab(tabName);
     };
-
+    
+    const AddLinkForm = () => {
+      setLinkForm([...linkForms, LinksForm])
+    }
+  
   return (
     <div className="container mx-auto ">
       <div className="tabs flex justify-around pt-4 
@@ -46,8 +51,15 @@ export default function TabComponent() {
       >
         <h2 className="text-xl font-bold">Links</h2>
         <div>
-          <LinksForm />
+          <button onClick={AddLinkForm} className={`my-4 p-2 ${linkForms.length == 5 ? 'bg-gray-500' : 'bg-yellow-300' } text-white rounded-lg`} disabled={linkForms.length == 5 }>Add Link</button>
         </div>
+        {
+          linkForms.map((_linkform, index) => (
+            <div key={index} className="mb-4">
+              {<_linkform />} 
+            </div>
+          ))
+        }
       </div>
       <div
         id="Tab2"
