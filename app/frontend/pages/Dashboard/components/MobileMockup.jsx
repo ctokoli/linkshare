@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { dataContext } from '../ContextAPI'
 
 
 export default function MobileMockup() {
+  const [links, setLinks ] = useState([]);
+
+  const { linkData } = useContext(dataContext);
+
+  useEffect(() => {
+    if (linkData.length !== 0 ) {
+      setLinks(prevLinks => [...prevLinks, linkData]);
+    }
+  }, [linkData])
   
-  const { linkData } = useContext(dataContext)
-  
-  console.log(linkData);
+  console.log(links);
   
     return (
       <div>

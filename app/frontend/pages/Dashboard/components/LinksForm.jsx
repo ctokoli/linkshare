@@ -10,13 +10,13 @@ import { FaTiktok } from "react-icons/fa6";
 
 
 export default function LinksFrom() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState([]);
   const { setlinkData } = useContext(dataContext);
 
   useEffect(() => {
     setlinkData(selectedOption)
   }, [selectedOption]);
-
+  
   const options = [
     {value:  'facebook', 'label': <> <div className='flex gap-2 items-center'> <FaFacebook /> Facebook </div></>},
     {value:  'tiktok', 'label': <> <div className='flex gap-2 items-center'> <FaTiktok /> Tiktok </div></>},
