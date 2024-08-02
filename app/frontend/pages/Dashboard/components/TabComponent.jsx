@@ -56,7 +56,7 @@ export default function TabComponent() {
         {
           linkForms.map((_linkform, index) => (
             <div key={index} className="mb-4">
-              {<_linkform />} 
+              {<_linkform index={index += 1 } />} 
             </div>
           ))
         }

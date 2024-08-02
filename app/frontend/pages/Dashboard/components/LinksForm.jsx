@@ -9,12 +9,12 @@ import { FaGithub } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa6";
 
 
-export default function LinksFrom() {
+export default function LinksFrom({ index }) {
   const [selectedOption, setSelectedOption] = useState([]);
   const { setlinkData } = useContext(dataContext);
-
+  
   useEffect(() => {
-    setlinkData(selectedOption)
+    setlinkData([selectedOption, index])
   }, [selectedOption]);
   
   const options = [
@@ -29,15 +29,11 @@ export default function LinksFrom() {
            <label className="block mb-2 text-sm font-medium text-gray-500 ">Select an option</label>
          <div className=''>
           <Select
-          classNames={{
-              control: (state) =>
-                state.isFocused ? 'border-red-600' : 'border-grey-300',
-            }}
+          id={index}
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
           placeholder={"Choose a country"}
-          autoFocus={false}
           />
          
          </div>
