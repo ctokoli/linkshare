@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, StrictMode  } from 'react'
 import { dataContext } from '../ContextAPI'
 import Profile from './Profile'
 import Mobile from './Mobile'
@@ -10,11 +10,13 @@ export default function Dashboard() {
  
   
   return (
-    <div className='px-14 py-4 bg-gray-100 flex justify-around '>
-      <dataContext.Provider value={{linkData, setlinkData}}>
-        <Profile />
-        <Mobile />
-      </dataContext.Provider>
-    </div>
+    <StrictMode>
+      <div className='px-14 py-4 bg-gray-100 flex justify-around '>
+        <dataContext.Provider value={{linkData, setlinkData}}>
+          <Profile />
+          <Mobile />
+        </dataContext.Provider>
+      </div>
+    </StrictMode>
   )
 }
