@@ -53,6 +53,7 @@ export default function TabComponent() {
         <div>
           <button onClick={AddLinkForm} className={`my-4 p-2 ${linkForms.length == 5 ? 'bg-gray-500' : 'bg-yellow-300' } text-white rounded-lg`} disabled={linkForms.length == 5 }>Add Link</button>
         </div>
+        <form action="" type="form">
         {
           linkForms.map((_linkform, index) => (
             <div key={index} className="mb-4">
@@ -60,6 +61,8 @@ export default function TabComponent() {
             </div>
           ))
         }
+        <button type="submit" className="py-2 px-4 bg-yellow-400 text-white rounded-lg">Save</button>
+        </form>
       </div>
       <div
         id="Tab2"

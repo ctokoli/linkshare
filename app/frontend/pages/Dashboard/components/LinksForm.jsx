@@ -44,7 +44,6 @@ export default function LinksFrom({ index }) {
             </div>
             <input type="text" id="input-group-1" className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  " placeholder="https://www.google.com" />
           </div>
-          <h3>{selectedOption !== null ? selectedOption.value : ""}</h3>
     </div>
     );
 }
