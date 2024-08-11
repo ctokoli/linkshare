@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LuUserSquare } from "react-icons/lu";
 import { HiMiniLink } from "react-icons/hi2";
 import LinksForm from './LinksForm';
+import ProfileTab from "./ProfileTab";
 
 
 
@@ -53,7 +54,7 @@ export default function TabComponent() {
         <div>
           <button onClick={AddLinkForm} className={`my-4 p-2 ${linkForms.length == 5 ? 'bg-gray-500' : 'bg-yellow-300' } text-white rounded-lg`} disabled={linkForms.length == 5 }>Add Link</button>
         </div>
-        <form action="" type="form">
+        <form >
         {
           linkForms.map((_linkform, index) => (
             <div key={index} className="mb-4">
@@ -70,8 +71,10 @@ export default function TabComponent() {
           activeTab == "Tab2" ? "block" : "hidden"
         }`}
       >
-        <h2 className="text-xl font-bold">Profile</h2>
-        <p>This is the content for Tab 2.</p>
+        <div className="pl-4 pt-2 text-center h-screen overflow-auto">
+          <h2 className="text-2xl font-bold">Profile Details</h2>
+          <ProfileTab />
+        </div>
       </div>
      
     </div>
