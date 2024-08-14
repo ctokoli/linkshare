@@ -3,6 +3,7 @@ import { LuUserSquare } from "react-icons/lu";
 import { HiMiniLink } from "react-icons/hi2";
 import LinksForm from './LinksForm';
 import ProfileTab from "./ProfileTab";
+import TabFormComaponent from "./TabForm";
 
 
 
@@ -54,16 +55,7 @@ export default function TabComponent() {
         <div>
           <button onClick={AddLinkForm} className={`my-4 p-2 ${linkForms.length == 5 ? 'bg-gray-500' : 'bg-yellow-300' } text-white rounded-lg`} disabled={linkForms.length == 5 }>Add Link</button>
         </div>
-        <form >
-        {
-          linkForms.map((_linkform, index) => (
-            <div key={index} className="mb-4">
-              {<_linkform index={index += 1 } />} 
-            </div>
-          ))
-        }
-        <button type="submit" className="py-2 px-4 bg-yellow-400 text-white rounded-lg">Save</button>
-        </form>
+       <TabFormComaponent linkForms={linkForms} />
       </div>
       <div
         id="Tab2"

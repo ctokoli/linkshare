@@ -8,7 +8,7 @@ export default function Form({ post, onSubmit, submitText }) {
     published_at: post.published_at || '',
   })
   const { data, setData, errors, processing } = form
-
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     onSubmit(form)

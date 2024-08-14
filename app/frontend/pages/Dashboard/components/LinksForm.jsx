@@ -14,7 +14,6 @@ export default function LinksFrom({ index }) {
   const { setlinkData } = useContext(dataContext);
 
   const [formData, setFormData] = useState({
-    social: selectedOption,
     link: ''
   })
 
@@ -24,12 +23,10 @@ export default function LinksFrom({ index }) {
       ...formData,
       [name]: value
     })
-    console.log(formData)
   }
-  
   useEffect(() => {
-    setlinkData([selectedOption, index])
-  }, [selectedOption]);
+    setlinkData([selectedOption, index, formData]);
+  }, [selectedOption, formData]);
   
   const options = [
     {value:  'facebook', 'label': <> <div className='flex gap-2 items-center'> <FaFacebook /> Facebook </div></>},
@@ -56,7 +53,7 @@ export default function LinksFrom({ index }) {
             <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
               <HiMiniLink />
             </div>
-            <input type="text" id="link" name='link' onChange={handleChange}  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  " placeholder="https://www.google.com"  required/>
+            <input type="text" id="link" name='link' value={formData.link} onChange={handleChange}  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  " placeholder="https://www.google.com"  required/>
           </div>
     </div>
     );
