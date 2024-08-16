@@ -10,28 +10,26 @@ function TabFormComaponent({linkForms}) {
     if (linkData[0] !== undefined && linkData[0].length !== 0  ) {
       setFormValue(prevLinks => {
         let map = new Map(prevLinks.map(item => [item.id, item]));
-        let newItem = { data: linkData, id: linkData[1] };
+        let newItem = { data: linkData, id: linkData[2] };
         map.set(newItem.id, newItem);
         return Array.from(map.values());
       });
     }
   }, [linkData])
 
-  // console.log(formValue)
+  //console.log(formValue)
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    const formData = {}
+    const formData = []
     formValue?.forEach((value) => {
-      value.data?.forEach((data) => {
-        if (data && data.value != null ) {
-           formData[`value${Object.keys(formData).length + 1}`] = data.value;
-          
-        } 
-        if (data && data.link != null ) {
-          formData[`link${Object.keys(formData).length + 1}`] = data.link;
-        }
-      }) 
+      console.log(value.data[0].value, value.data[1].link)
+      if (value.data) {
+        formData.push({
+          value: value.data[0].value,
+          link: value.data[1].link
+      });
+      }
       
     })
     console.log(formData)

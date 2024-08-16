@@ -7,6 +7,7 @@ import Mobile from './Mobile'
 export default function Dashboard() {
   const [linkData, setlinkData] = useState([]);
   
+  
   return (
     <StrictMode>
       <div className='px-14 py-4 bg-gray-100 flex justify-around '>

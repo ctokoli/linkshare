@@ -14,7 +14,7 @@ export default function MobileMockup() {
     if (linkData[0] !== undefined && linkData[0].length !== 0  ) {
       setLinks(prevLinks => {
         let map = new Map(prevLinks.map(item => [item.id, item]));
-        let newItem = { data: linkData, id: linkData[1] };
+        let newItem = { data: linkData, id: linkData[2] };
         map.set(newItem.id, newItem);
         return Array.from(map.values());
       });

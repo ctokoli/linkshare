@@ -25,7 +25,7 @@ export default function LinksFrom({ index }) {
     })
   }
   useEffect(() => {
-    setlinkData([selectedOption, index, formData]);
+    setlinkData([selectedOption, formData, index ]);
   }, [selectedOption, formData]);
   
   const options = [

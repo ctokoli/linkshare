@@ -12,16 +12,8 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_08_13_215031) do
   create_table "links", force: :cascade do |t|
-    t.string "value1"
-    t.string "value3"
-    t.string "value5"
-    t.string "value7"
-    t.string "value9"
-    t.string "link2"
-    t.string "link4"
-    t.string "link6"
-    t.string "link8"
-    t.string "link10"
+    t.string "value"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

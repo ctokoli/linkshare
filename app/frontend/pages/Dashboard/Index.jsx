@@ -1,14 +1,14 @@
 import React from 'react'
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
+import { usePage } from '@inertiajs/react'
 
-export default function Index() {
-  return ( 
-    <div className='w-full bg-white p-2 rounded-lg min-w-[1250px] min-h-screen'>
-      <Header />
-      <Dashboard />
-      
-    </div>
+function Links({links}) {
+  // const { links } = usePage().props
+  console.log(links)
+  return (
+    <h2>hello Data</h2>
    );
 }
+
+export default Links;
+
 

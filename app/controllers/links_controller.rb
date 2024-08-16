@@ -3,12 +3,22 @@ class LinksController < ApplicationController
 
   inertia_share flash: -> { flash.to_hash }
 
+  def index
+    links = Link.all
+    render inertia: 'Dashboard/links', props: {
+      links: links.map do |link|
+        serialize_link(link)
+      end
+    }
+  end
+
   def create
-    @link = Link.new(link_params)
-    if @link.save
-      redirect_to root_path, notice: 'Link was successfully created.'
+    @links = Link.new(link_params)
+    if @links.save
+      redirect_to link_path, notice: 'User was successfully created.'
+
     else
-      redirect_to root_path, inertia: { errors: @link.errors }
+      redirect_to root_path, inertia: { errors: links.errors }
     end
   end
 
@@ -20,11 +30,11 @@ class LinksController < ApplicationController
 
   def serialize_link(link)
     link.as_json(only: %i[
-      value1  value3  value5  value7  value9  link2  link4  link6  link8  link10
+      value link
     ])
   end
 
   def link_params
-    params.require(:link).permit(:value1, :value3, :value5, :value7, :value9, :link2, :link4, :link6, :link8, :link10)
+    params.require(:link).permit(:value, :link)
   end
 end
