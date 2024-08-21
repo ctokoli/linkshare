@@ -74,3 +74,5 @@ gem "vite_rails", "~> 3.0"
 gem "inertia_rails", "~> 3.2"
 
 gem "inertia_rails-contrib", "~> 0.1.1"
+
+gem "devise", "~> 4.9"
