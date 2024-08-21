@@ -13,13 +13,15 @@ class LinksController < ApplicationController
   end
 
   def create
-    @links = Link.new(link_params)
-    if @links.save
-      redirect_to link_path, notice: 'User was successfully created.'
-
-    else
-      redirect_to root_path, inertia: { errors: links.errors }
+    link_params.each do |selection|
+      @links = Link.new(selection)
+      if @links.save
+        Rails.logger.debug 'Value Saved into Database'
+      else
+        redirect_to root_path, inertia: { errors: links.errors }
+      end
     end
+    redirect_to link_path, notice: 'Link was successfully created.'
   end
 
   private
@@ -30,11 +32,14 @@ class LinksController < ApplicationController
 
   def serialize_link(link)
     link.as_json(only: %i[
-      value link
-    ])
+                   value link
+                 ])
   end
 
   def link_params
-    params.require(:link).permit(:value, :link)
+    params.require(:link).map do |link|
+      permitted = link.permit(:value, :link)
+      permitted
+    end
   end
 end

@@ -1,5 +1,6 @@
 import React, { useState, StrictMode  } from 'react'
 import { dataContext } from '../ContextAPI'
+import { usePage } from '@inertiajs/react'
 import Profile from './Profile'
 import Mobile from './Mobile'
 
@@ -7,6 +8,8 @@ import Mobile from './Mobile'
 export default function Dashboard() {
   const [linkData, setlinkData] = useState([]);
   
+
+  console.log(link)
   
   return (
     <StrictMode>

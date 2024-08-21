@@ -16,24 +16,25 @@ function TabFormComaponent({linkForms}) {
       });
     }
   }, [linkData])
-
-  //console.log(formValue)
+  
   
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = []
     formValue?.forEach((value) => {
-      console.log(value.data[0].value, value.data[1].link)
       if (value.data) {
         formData.push({
           value: value.data[0].value,
           link: value.data[1].link
       });
       }
-      
     })
-    console.log(formData)
-    router.post('/links', formData)
+   
+    let selections = {
+      link: formData
+    }
+   
+    router.post('/links', selections)
   }
   
   return ( 

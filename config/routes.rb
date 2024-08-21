@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   post 'links', to: 'links#create'
   get 'link', to: 'links#index'
   # get 'data', to: 'links#index'

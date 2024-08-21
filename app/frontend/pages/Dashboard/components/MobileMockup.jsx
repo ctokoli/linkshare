@@ -20,6 +20,8 @@ export default function MobileMockup() {
       });
     }
   }, [linkData])
+  
+  // console.log(links)
     return (
       <div>
 <div className="relative mx-auto border-gray-300 dark:border-gray-800 bg-gray-300 dark:bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
