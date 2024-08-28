@@ -1,32 +1,52 @@
-import React from 'react'
+import React from 'react';
+import { FaLinkedin } from "react-icons/fa6";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa6";
 
 export const Facebook = ({social}) => {
   return (
-    <div className='text-2l bg-sky-400 p-4 rounded-lg text-white'>{social}</div>
+    <div className='text-2l bg-sky-400 flex gap-2 items-center p-4 rounded-lg text-white'>
+        <FaFacebook />
+        {social}
+    </div>
   )
 }
 
 export const Linkedin = ({social}) => {
   return (
-    <div className='text-2l bg-sky-600 p-4 rounded-lg text-white'>{social}</div>
+    <div className='text-2l bg-sky-600 flex gap-2 items-center p-4 rounded-lg text-white'>
+      <FaLinkedin />
+     {social}
+    </div>
   )
 }
 
 export const X = ({social}) => {
   return (
-    <div className='text-2l bg-gray-950 p-4 rounded-lg text-white'>{social}</div>
+    <div className='text-2l bg-gray-950 flex gap-2 items-center p-4 rounded-lg text-white'>
+      <RiTwitterXLine />
+      {social}
+    </div>
   )
 }
 
 export const Tiktok = ({social}) => {
   return (
-    <div className='text-2l bg-rose-500 p-4 rounded-lg text-white'>{social}</div>
+    <div className='text-2l bg-rose-500 flex gap-2 items-center p-4 rounded-lg text-white'>
+    <FaTiktok />
+    {social}
+    </div>
   )
 }
 
 export const Github = ({social}) => {
   return (
-    <div className='text-2l bg-gray-900 p-4 rounded-lg text-white'>{social}</div>
+    <div className='text-2l bg-gray-900 flex gap-2 items-center p-4 rounded-lg text-white'>
+    <FaGithub />
+    {social}
+    </div>
   )
 }
 

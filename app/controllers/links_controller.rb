@@ -4,24 +4,25 @@ class LinksController < ApplicationController
   inertia_share flash: -> { flash.to_hash }
 
   def index
-    links = Link.all
-    render inertia: 'Dashboard/links', props: {
-      links: links.map do |link|
-        serialize_link(link)
-      end
-    }
+    links = Links.where(user_id: current_user.id)
+    Rails.logger.debug "links value #{links.inspect}"
+    # render inertia: 'Dashboard/links', props: {
+    #   links: links.map do |link|
+    #     serialize_link(link)
+    #   end
+    # }
   end
 
   def create
     link_params.each do |selection|
-      @links = Link.new(selection)
+      @links = current_user.links.new(selection)
       if @links.save
         Rails.logger.debug 'Value Saved into Database'
       else
-        redirect_to root_path, inertia: { errors: links.errors }
+        redirect_to root_path, inertia: { errors: @links.errors }
       end
     end
-    redirect_to link_path, notice: 'Link was successfully created.'
+    redirect_to root_path, notice: 'Link was successfully created.'
   end
 
   private

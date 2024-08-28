@@ -1,26 +1,26 @@
 import React from 'react'
 import { Linkedin, Facebook, Tiktok, Github, X, NoContent } from './StyledLinks';
 
-function DisplayLinks({link, linkWithIcon}) {
-  const renderLink = (link, linkWithIcon) => {
+function DisplayLinks({link, key, id}) {
+  const renderLink = (link) => {
       switch(link){
         case 'facebook':
-          return <Facebook social={linkWithIcon} />;
+          return <Facebook social={link} id={id} />;
         case 'linkedin':
-          return <Linkedin social={linkWithIcon} />;
+          return <Linkedin social={link} />;
         case 'tiktok':
-          return <Tiktok social={linkWithIcon} />;
+          return <Tiktok social={link} />;
         case 'github':
-          return <Github social={linkWithIcon} />;
+          return <Github social={link} />;
         case 'x':
-          return <X social={linkWithIcon} />;
+          return <X social={link} />;
         default:
           return 
       }
   }
   return ( 
-     <div>
-        {renderLink (link, linkWithIcon)}
+     <div className='pb-2' key={key}>
+        {renderLink (link)}
      </div>
    );
 }

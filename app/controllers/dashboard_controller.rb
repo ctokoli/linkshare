@@ -1,9 +1,11 @@
 class DashboardController < ApplicationController
 
   def index
-    links = Link.all
-    render inertia: 'Dashboard/data', props: {
+    links = Link.where(user_id: current_user.id)
+
+    render inertia: 'Dashboard/links', props: {
       links: links.map do |link|
+          Rails.logger.debug "links value #{link.inspect}"
         serialize_link(link)
       end
     }
@@ -12,7 +14,8 @@ class DashboardController < ApplicationController
   private
   def serialize_link(link)
     link.as_json(only: %i[
-      value1  value3  value5  value7  value9  link2  link4  link6  link8  link10
-    ])
+                   id value link
+                 ])
   end
+
 end

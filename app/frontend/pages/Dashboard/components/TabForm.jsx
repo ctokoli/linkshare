@@ -22,6 +22,7 @@ function TabFormComaponent({linkForms}) {
     e.preventDefault()
     const formData = []
     formValue?.forEach((value) => {
+      
       if (value.data) {
         formData.push({
           value: value.data[0].value,

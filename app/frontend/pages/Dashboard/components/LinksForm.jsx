@@ -11,11 +11,13 @@ import { FaTiktok } from "react-icons/fa6";
 
 export default function LinksFrom({ index, links }) {
   const [selectedOption, setSelectedOption] = useState([]);
-  const { setlinkData } = useContext(dataContext);
+  const { setLinkData } = useContext(dataContext);
 
   const [formData, setFormData] = useState({
     link: ''
   })
+  
+  // console.log(setLinkData)
   
   const handleChange = (e) => {
     const {name, value} = e.target
@@ -24,8 +26,12 @@ export default function LinksFrom({ index, links }) {
       [name]: value
     })
   }
+  
   useEffect(() => {
-    setlinkData([selectedOption, formData, index ]);
+    setLinkData(prevData => ({
+      ...prevData, 
+      client: [...prevData.client, [selectedOption, formData, index]], 
+  }));
   }, [selectedOption, formData]);
   
   const options = [
